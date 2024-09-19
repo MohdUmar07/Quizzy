@@ -1,0 +1,121 @@
+/* Prevent scrolling on the entire page */
+html, body {
+  height: 100%;
+  overflow: hidden; /* Prevent page scroll */
+}
+
+/* Container styling */
+.profile-container {
+  max-width: 900px;
+  height: 100vh;
+  width: 95vw;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f2f5f9; /* Matches the background of other components */
+  overflow-y: auto; /* Added scroll within this container */
+}
+
+/* Header styling */
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* User info styling */
+.user-info {
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 200px; /* Restricted height */
+  overflow-y: auto; /* Added internal scroll if content exceeds height */
+}
+
+/* Form styling */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-form label {
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+}
+.profile-form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  width: 100%; /* Set all input fields to take full width */
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  max-width: 500px; /* You can control the max width of the input boxes */
+}
+
+/* Button styling */
+.profile-form button {
+  padding: 10px;
+  border: 1px solid #cfcccb; /* Button border color */
+  border-radius: 30px;
+  background-color: #F66B1D; /* Button background color */
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.profile-form button:hover {
+  background-color: #fb6108; /* Hover state matches other buttons */
+}
+
+/* Error and success messages */
+.error-message {
+  color: red;
+}
+
+.success-message {
+  color: green;
+}
+
+/* Deactivation and logout button section styling */
+.deactivation-logout-section {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: white;
+  border: 1px solid #ddd;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex; /* Flexbox to place buttons side by side */
+  justify-content: center; /* Center align the buttons */
+  gap: 20px; /* Spacing between the buttons */
+}
+
+/* Button styling */
+.deactivation-button, .logout-button {
+  padding: 10px;
+  border: none;
+  align-items: center;
+  border-radius: 30px;
+  background-color: #F66B1D; /* Match primary button color */
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex; /* To align the icon and text */
+  align-items: center; /* Align icon and text vertically */
+  gap: 10px; /* Space between icon and text */
+}
+
+.deactivation-button:hover, .logout-button:hover {
+  background-color: #fb6108; /* Hover color */
+}
+
+.deactivation-button i, .logout-button i {
+  font-size: 18px; /* Size of the icons */
+}
