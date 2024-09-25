@@ -10,7 +10,7 @@
   height: 100vh;
   padding: 40px;
   box-sizing: border-box;
-  background-image: url('E:\SelfWork\Quizzy\frontend\src\assets\Quizzy.png');
+  background-image: url('../assets/Quizzy.png');
   border-radius: 15px;
   margin: 0 auto; /* Center the container */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
