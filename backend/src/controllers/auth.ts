@@ -10,8 +10,8 @@ import { ReturnResponse } from "../utils/interfaces";
 import Mailgen from 'mailgen';
 
 
-import OTP from "../models/otp"
-import sendEmailOTPRegister from "./OTP"
+import OTP from "../models/OTP"
+import sendEmailOTPRegister from "./otp"
 
 
 
