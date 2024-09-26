@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 import '../styles/Login.css'; 
@@ -13,7 +13,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3002/auth/login', { email, password });
+      const response = await axios.post(`https://${process.env.BACKEND_URL}/auth/login`, { email, password });
       const token = response.data.data.token;
       localStorage.setItem('authToken', token);
       navigate('/dashboard');
@@ -26,7 +26,7 @@ function Login() {
     <div className="Login-container">
       <ToastContainer />
       <h2>Login</h2>
-      <p>Not registered? <a href="http://localhost:3000/auth/">Register</a></p>
+      <p>Not registered? <Link to="/auth">Register</Link></p>
       <form onSubmit={handleLogin}>
         <div className="formgroup">
           <label htmlFor="email">Email</label>
