@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../styles/Register.css";
@@ -46,7 +46,7 @@ function Register() {
     }
 
     try {
-      const response = await axios.post('http://localhost:3002/auth/', { name, email, password, confirmPassword });
+      const response = await axios.post(`https://${process.env.REACT_APP_API_URL}/auth/`, { name, email, password, confirmPassword });
       const { token } = response.data.data; 
       if (token) {
         toast.success('Registration successful! Redirecting to OTP verification...');
@@ -63,7 +63,7 @@ function Register() {
   return (
     <div className='register-container'>
       <h2>Create New Account</h2>
-      <p>Already registered? <a href='http://localhost:3000/auth/login'>Login</a></p>
+      <p>Already registered? <Link to="/auth/login">Login</Link></p>
       <form onSubmit={handleRegister} className=''>
         <div className='formgroup'>
           <label htmlFor="userName">Name : </label>

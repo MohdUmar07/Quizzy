@@ -25,7 +25,7 @@ const MyProfile = () => {
         }
 
         await axios
-          .get("http://localhost:3002/user", {
+          .get(`${process.env.REACT_APP_API_URL}/user`, {
             headers: {
               Authorization: `Bearer ${authToken}`,
             },
@@ -66,7 +66,7 @@ const MyProfile = () => {
 
       await axios
         .put(
-          "http://localhost:3002/user/changepassword",
+          `${process.env.REACT_APP_API_URL}/user/changepassword`,
           {
             currentPassword,
             newPassword,
@@ -103,7 +103,7 @@ const MyProfile = () => {
 
       await axios
         .put(
-          "http://localhost:3002/user",
+          `${process.env.REACT_APP_API_URL}/user`,
           { name: updatedName },
           {
             headers: {
